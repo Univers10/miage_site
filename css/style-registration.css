@@ -1,0 +1,197 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background: url(../assets/images/pencils-g2e23325ce_1920.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+    font-family: sans-serif;
+    margin-top: 40px;
+    height: 100vh;
+    width: 100%;
+}
+
+.regform{
+    width: 800px;
+    background-color: rgba(0, 0, 0, 6);
+    margin: auto;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+    border-radius: 15px 15px 0px 0px;
+}
+
+.main{
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 800px;
+    margin: auto;
+}
+
+form{
+    padding: 10px;
+}
+
+#name{
+    width: 100%;
+
+}
+
+.name{
+    margin-left: 25px;
+    margin-top: 25px;
+    width: 125px;
+    color: white;
+    font-size: 18px;
+    font-weight: 700px;
+}
+
+.firstname{
+    position: relative;
+    left: 160px;
+    top: -37px;
+    line-height: 40px;
+    border-radius: 6px;
+    padding: 0 22px;
+    font-size: 16px;
+}
+
+.lastname{
+    position: relative;
+    left: 419px;
+    top: -100px;
+    line-height: 40px;
+    border-radius: 6px;
+    padding: 0 22px;
+    font-size: 16px;
+    color: #555;
+}
+
+.firstlabel{
+    position: relative;
+    color: #e5e5e5;
+    text-transform: capitalize;
+    font-size: 14px;
+    left: 165px;
+    top: -37px;
+}
+
+.lastlabel{
+    position: relative;
+    color: #e5e5e5;
+    text-transform: capitalize;
+    font-size: 14px;
+    left: 425px;
+    top: -100px;
+}
+
+.company{
+    position: relative;
+    left: 200px;
+    top: -37px;
+    line-height: 40px;
+    width: 450px;
+    border-radius: 6px;
+    padding: 0 22px;
+    font-size: 16px;
+    color: #555;
+}
+
+.code{
+    position: relative;
+    left: 200px;
+    top: -37px;
+    line-height: 40px;
+    width: 75px;
+    border-radius: 6px;
+    padding: 0 22px;
+    font-size: 16px;
+    color: #555;
+}
+.number{
+    position: relative;
+    left: 200px;
+    top: -37px;
+    line-height: 40px;
+    width: 243px;
+    border-radius: 6px;
+    padding: 0 22px;
+    font-size: 16px;
+    color: #555;
+}
+
+.area_code{
+    position: relative;
+    color: #e5e5e5;
+    text-transform: capitalize;
+    left: 55px;
+    top: -4px;
+}
+
+.phone-number{
+    position: relative;
+    color: #e5e5e5;
+    text-transform: capitalize;
+    left: -105px;
+    top: -4px;
+}
+
+.option{
+    position: relative;
+    left: 200px;
+    top: -37px;
+    line-height: 40px;
+    width: 500px;
+    height: 40px;
+    border-radius: 6px;
+    padding: 0 22px;
+    font-size: 16px;
+    color: #555;
+    outline: none;
+    overflow: hidden; 
+}
+
+.option option{
+    font-size: 20px;
+}
+
+#customer{
+    margin-left: 25px;
+    color: white;
+    font-size: 18px;
+}
+
+.radio{
+    display: inline-block;
+    padding-right: 70px;
+    font-size: 25px;
+    margin-left: 25px;
+    margin-top: 15PX;
+    color: white;
+}
+
+.radio input{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    outline: none;
+}
+
+button{
+    background-color: #3baf9f;
+    display: block;
+    margin: 20px 0 0px 20px;
+    text-align: center;
+    border-radius: 12px;
+    border: 2px solid #366473;
+    padding: 14px 110px;
+    color: white;
+    cursor: pointer;
+}
+
+.student{
+    margin-left: 20px;
+    color: white;
+}
