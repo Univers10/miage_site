@@ -8,6 +8,6 @@
     if($link){
         // echo "Connextion établie";
     }else{
-        die(mysqli_connect_error());
+        die(pdo());
     }
 ?>

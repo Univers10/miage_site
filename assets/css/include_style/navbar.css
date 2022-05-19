@@ -1,0 +1,35 @@
+.main_navbar{
+    /* position: fixed; */
+    height: 80px;
+    width: 100%;
+    background: #000000;
+    opacity: 80%;
+}
+
+
+.main_navbar ul{
+    float: right;
+    margin-right: 40px;
+}
+
+.main_navbar li{
+    display: inline-block;
+    margin: 0 8px;
+    line-height: 80px;
+}
+
+.main_navbar a{
+    color: white;
+    font-size: 18px;
+    /* text-transform: uppercase; */
+    border: 1px solid transparent;
+    padding: 7px 10px;
+    border-radius: 3PX;
+}
+
+a:hover{
+    border: 1px solid white;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    transition: .9s;
+}

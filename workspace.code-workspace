@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "..\\forum"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "new_project"
+	}
+}
