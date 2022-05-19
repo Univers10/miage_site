@@ -1,4 +1,5 @@
 <?php
+
   $host = 'localhost';
   $dbname = 'db_site_ecole';
   $username = 'root';
@@ -60,7 +61,7 @@
           <td><?php echo htmlspecialchars($row['birth_at']); ?></td>
           <td><?php echo htmlspecialchars($row['id_roles']); ?></td>
           <td><?php echo htmlspecialchars($row['id_gender']); ?></td>
-          <td><button type="submit" class="btn btn-primary" name="modify<?=$row["id"]?>">Modifier</button></td>
+          <td><a href="update_registration.php?id=<?= $row['id']; ?>" class="btn btn-warning">Modifier la question</a></td>
           <td><button type="submit" class="btn btn-primary" name="delete">Supprimer</button></td>
         </form>
       </tr>

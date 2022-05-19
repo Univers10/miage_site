@@ -1,0 +1,9 @@
+Progression de la conception du site
+
+1 Systeme d'inscription OK
+2 Systeme de connection OK
+3 Lister les utilisateurs OK
+4 Modifier des informations En cours...
+5 Systeme de paiement
+6 Creation automatique des classes
+7 Bonus

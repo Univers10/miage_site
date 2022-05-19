@@ -6,24 +6,29 @@
 
     if(isset($_GET['id']) AND !empty($_GET['id'])){
 
-        $idOfQuestion = $_GET['id'];
+        $idOfUsers = $_GET['id'];
         //Vérifier si la question existe
 
-        $checkIfQuestionExists = $bdd->prepare("SELECT * FROM questions WHERE id = ?");
-        $checkIfQuestionExists->execute(array($idOfQuestion));
+        $checkIUusersExists = $bdd->prepare("SELECT * FROM users WHERE id = ?");
+        $checkIUusersExists->execute(array($idOfUsers));
 
-        if($checkIfQuestionExists->rowCount() > 0){
+        if($checkIUusersExists->rowCount() > 0){
 
             //Récupérer les données de la question
-            $questionInfos = $checkIfQuestionExists->fetch();
-            if($questionInfos["id_author"] == $_SESSION['id']){
+            $usersInfos = $checkIUusersExists->fetch();
+            if($usersInfos["matricule"] == $_SESSION['matricule']){
 
-                $question_title = $questionInfos['title'];
-                $question_description = $questionInfos['description'];
-                $question_content = $questionInfos['content'];
-                
-                $question_description = str_replace("<br />", "", $question_description);
-                $question_content = str_replace("<br />", "", $question_content);
+                $users_title = $usersInfos['title'];
+                $user_matricule = $usersInfos['matricule'];
+                $user_firstname = $usersInfos['firstname'];
+                $user_lastname = $usersInfos['lastname'];
+                $user_pseudo = $usersInfos['pseudo'];
+                $user_email = $usersInfos['email'];
+                $user_phone = $usersInfos['tel'];
+                $user_birthday = $usersInfos['birthday'];
+                $user_birth_at = $usersInfos['birth_at'];
+                $user_gender = $usersInfos['id_gender'];
+                $user_roles = $usersInfos['id_roles'];
 
             }else{
                 $errorMsg = "Vous n'êtes pas l'auteur de cette question...";
