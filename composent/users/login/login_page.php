@@ -15,20 +15,21 @@
         <div class="contentBx">
             <div class="formBx">
                 <h2>Connexion a l'ecole</h2>
-                <form action="">
+
+                <form action="../../../actions/users/login/login_pageActions.php" method="POST">
                     <div class="inputBx">
-                        <span>Username</span>
-                        <input type="text">
+                        <span>Email</span>
+                        <input type="text" name="email">
                     </div>
                     <div class="inputBx">
                         <span>Password</span>
-                        <input type="password">
+                        <input type="password" name="password">
                     </div>
                     <div class="remember">
                         <label for=""><input type="checkbox"> Remember me</label>
                     </div>
                     <div class="inputBx">
-                        <input type="submit" value="Sing in">
+                        <input type="submit" value="Sing in" name ="validate">
                     </div>
                     <div class="inputBx">
                         <p>Don't have an account? <a href="registration.html">Sing up <a href="#">Mot de passe oublé</a></p>

@@ -1,6 +1,6 @@
 <?php
     session_start();
-    require('../../../actions/database.php');
+    require('../../actions/database.php');
     
     //Vérifier si l'id de la question est bien passé en paramètre dans l'URL
     if(isset($_GET['id']) AND !empty($_GET['id'])){

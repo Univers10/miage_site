@@ -131,63 +131,6 @@ button:hover{
     border: none;
 }
 
-/* ------Animation de texte-------- */
-/* .texteBx{
-    display: flex;
-}
-
-.one{
-    color: #fff;
-    font-size: 60px;
-    font-weight: 400;
-}
-
-.two{
-    margin-left: 15px;
-    height: 90px;
-    line-height: 90px;
-    overflow: hidden;
-}
-
-.two li{
-    color: #e18d28;
-    font-size: 60px;
-    font-weight: 500;
-    position: relative;
-    top: 0;
-    animation: slide 12s steps(4) infinite;
-}
-
-@keyframes slide{
-    100%{
-        top: -360px;
-    }
-}
-
-.two li span{
-    position:  relative;
-    margin: 5px 0;
-    line-height: 90px;
-}
-
-.two li span::after{
-    content: "";
-    position:  absolute;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background: #e18d28;
-    border-left: 2px solid #fc6d6d;
-    animation: typing 3s steps(10) infinite;
-}
-
-@keyframes typing{
-    40%, 60%{
-        left: calc(100% + 30px);
-    }
-} */
-
-
 
 /* ---------Conteneur du corp de la page--------- */
   

@@ -3,7 +3,6 @@
     require('../../../actions/database.php');
     
     //Vérifier si l'id de la question est bien passé en paramètre dans l'URL
-var_dump($_GET);
     if(isset($_GET['id']) AND !empty($_GET['id'])){
 
         $idOfUsers = $_GET['id'];
@@ -26,8 +25,8 @@ var_dump($_GET);
                 $user_phone = $usersInfos['tel'];
                 $user_birthday = $usersInfos['birthday'];
                 $user_birth_at = $usersInfos['birth_at'];
-                $user_gender = $usersInfos['id_gender'];
-                $user_roles = $usersInfos['id_roles'];
+                $user_gender = $usersInfos['gender'];
+                $user_roles = $usersInfos['roles'];
 
             // }else{
             //     $errorMsg = "Vous n'êtes pas l'auteur de cette question...";
@@ -100,10 +99,10 @@ var_dump($_GET);
                 <div>
                     <h2 class="name">Statut</h2>
                     <select name="roles" class="option">
-                        <option selected="selected" value="<?=$user_roles?>">Admin</option>
-                        <option value="1">Admin</option>
-                        <option value="2">Secretaire</option>
-                        <option value="3">Comptable</option>
+                        <option selected="selected"><?=$user_roles?></option>
+                        <option>Admin</option>
+                        <option>Secretaire</option>
+                        <option>Comptable</option>
                                        
                     </select>
                 </div>
@@ -115,8 +114,8 @@ var_dump($_GET);
                     <h2 class="name">Sexe</h2>
                     <select name="gender" class="option">
                         <option selected="selected"><?=$user_gender?></option>
-                        <option value="1">Homme</option>
-                        <option value="2">Femme</option>             
+                        <option>Homme</option>
+                        <option>Femme</option>             
                     </select>
                 </div>
                 <button type="submit" name="validate">Modifier</button>
@@ -158,9 +157,8 @@ if(isset($_POST['validate'])){
         echo "Toute les champs sont bien remplir";
 
         //    Verifier si l'utilisateur existe déja sur le site
-        $insertUserOnWebsite = $bdd->prepare('UPDATE users SET matricule = ?, firstname = ?, lastname = ?, pseudo = ?, email = ?, tel = ?, birthday = ?, birth_at = ?, id_gender = ?, id_roles = ? WHERE id = ?');
+        $insertUserOnWebsite = $bdd->prepare('UPDATE users SET matricule = ?, firstname = ?, lastname = ?, pseudo = ?, email = ?, tel = ?, birthday = ?, birth_at = ?, gender = ?, roles = ? WHERE id = ?');
         $req = $insertUserOnWebsite->execute(array($user_matricule, $user_firstname, $user_lastname, $user_pseudo, $user_email, $user_phone, $user_birthday, $user_birth_at, $user_gender, $user_roles, $idOfUsers));
-        
         header('Location: showAllUsers.php');       
     
     }else{

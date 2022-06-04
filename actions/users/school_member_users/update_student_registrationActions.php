@@ -19,7 +19,6 @@
             && !empty($_POST['phone'])
             && !empty($_POST['level'])
             && !empty($_POST['class'])
-            && !empty($_POST['diploma'])
             && !empty($_POST['gender'])
             && !empty($_POST['password'])){
             echo "Tout les champs sont bien remplir";
@@ -34,7 +33,6 @@
             $user_birth_at = htmlspecialchars($_POST['birth_at']);
             $user_level = htmlspecialchars($_POST['level']);
             $user_class = htmlspecialchars($_POST['class']);
-            $user_diploma = htmlspecialchars($_POST['diploma']);
             $user_gender = htmlspecialchars($_POST['gender']);
             $user_roles = htmlspecialchars('3');
             $user_password = password_hash($_POST['password'], PASSWORD_DEFAULT);
@@ -47,8 +45,8 @@
             
             if($checkIfUserAlreadyExists->rowCount() == 0){
                 //Isérer l'utilisateurdans la bdd
-                $insertUserOnWebsite = $bdd->prepare("UPDATE students SET matricule=?, firstname=?, lastname=?, pseudo=?, email=?, tel=?, birthday=?, birth_at=?, id_level=?, id_class=?, id_diploma=?, id_gender=?, id_roles=?, mdp=?  WHERE matricule = ?");
-                $req = $insertUserOnWebsite->execute(array($user_matricule, $user_firstname, $user_lastname, $user_pseudo, $user_email, $user_phone, $user_birthday, $user_birth_at, $user_level, $user_class, $user_diploma, $user_gender, $user_roles, $user_password));
+                $insertUserOnWebsite = $bdd->prepare("UPDATE students SET matricule=?, firstname=?, lastname=?, pseudo=?, email=?, tel=?, birthday=?, birth_at=?, level=?, class=?, gender=?, roles=?, mdp=?  WHERE matricule = ?");
+                $req = $insertUserOnWebsite->execute(array($user_matricule, $user_firstname, $user_lastname, $user_pseudo, $user_email, $user_phone, $user_birthday, $user_birth_at, $user_level, $user_class, $user_gender, $user_roles, $user_password));
                 if($req){
                     echo "Enregistrement éffectué avec sudcces";
                 }else{echo "Enregistrement non effectué";}

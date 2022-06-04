@@ -18,10 +18,6 @@
                 <label for="" class="firstlabel">Prénoms</label>
             </div>
             <div class="name">
-                <h2 class="pseudo">Pseudo</h2>
-                <input type="text" class="pseudo_input" name="pseudo">
-            </div>
-            <div class="name">
                 <h2 class="matricule">Matricule</h2>
                 <input type="text" class="matricule_input" name="matricule">
             </div>
@@ -45,18 +41,16 @@
 
             <div>
                 <h2 class="name">Mot de passe</h2>
-                <input class="password" type="text" name="password" value="<?= $passwordGenerated; ?>">
+                <input class="password" type="text" name="password">
             </div>
 
             <div>
                 <h2 class="name">Statut</h2>
                 <select name="roles" class="option">
                     <option disabled="disabled" selected="selected">--Choisir le niveau</option>
-                    <option>1</option>
-                    <option>Licence 2</option>
-                    <option>Licence 3</option>
-                    <option>Master 1</option>
-                    <option>Master 2</option>                
+                    <option>Admin</option>             
+                    <option>Secretaire</option>             
+                    <option>Comptable</option>             
                 </select>
             </div>
        

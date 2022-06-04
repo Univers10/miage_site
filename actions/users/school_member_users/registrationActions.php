@@ -9,8 +9,7 @@
       echo "Bouton Valider est bien activé";
    //    Verifier si l'utilisateur a bien complété tous les champs
        if(
-            !empty($_POST['pseudo']) 
-            && !empty($_POST['firstname']) 
+            !empty($_POST['firstname']) 
             && !empty($_POST['lastname']) 
             && !empty($_POST['matricule']) 
             && !empty($_POST['birthday'])
@@ -25,7 +24,6 @@
             $user_matricule = htmlspecialchars($_POST['matricule']);
             $user_firstname = htmlspecialchars($_POST['firstname']);
             $user_lastname = htmlspecialchars($_POST['lastname']);
-            $user_pseudo = htmlspecialchars($_POST['pseudo']);
             $user_email = htmlspecialchars($_POST['email']);
             $user_phone = htmlspecialchars($_POST['phone']);
             $user_birthday = htmlspecialchars($_POST['birthday']);
@@ -42,10 +40,11 @@
             
             if($checkIfUserAlreadyExists->rowCount() == 0){
                 //Isérer l'utilisateurdans la bdd
-                $insertUserOnWebsite = $bdd->prepare("INSERT INTO users(matricule, firstname, lastname, pseudo, email, tel, birthday, birth_at, id_gender, id_roles, mdp)  VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-                $req = $insertUserOnWebsite->execute(array($user_matricule, $user_firstname, $user_lastname, $user_pseudo, $user_email, $user_phone, $user_birthday, $user_birth_at, $user_gender, $user_roles, $user_password));
+                $insertUserOnWebsite = $bdd->prepare("INSERT INTO users(matricule, firstname, lastname,  email, tel, birthday, birth_at, gender, roles, mdp)  VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+                $req = $insertUserOnWebsite->execute(array($user_matricule, $user_firstname, $user_lastname, $user_email, $user_phone, $user_birthday, $user_birth_at, $user_gender, $user_roles, $user_password));
                 if($req){
                     echo "Enregistrement éffectué avec sudcces";
+                    header("Location: ../../composent/users/school_member_users/showAllUsers.php");
                 }else{echo "Enregistrement non effectué";}
     
     
@@ -57,7 +56,6 @@
             $errorMsg = "Veuillez compléter tous les champs...";
         }
    } 
-
 
 ?>
 

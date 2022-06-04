@@ -1,5 +1,5 @@
 <nav class="main_navbar">
-    <label class="logo">MonSite</label>
+    <label class="logo">Miage-GI</label>
     <ul>
         <li><a href="#">Accueil</a></li>
         <li><a href="composent/article/index.php">Blog</a></li>

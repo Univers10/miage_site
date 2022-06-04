@@ -12,7 +12,7 @@
 
         <?php include "include/navbar.php";?>
 
-        <div class="texteBx">
+        <!-- <div class="texteBx">
             <div class="one">MIAGE C'EST</div>
             <ul class="two">
                 <li><span>Une formation de qualitée</span></li>
@@ -20,7 +20,7 @@
                 <li><span>L'école qui vous faut</span></li>
                 <li><span>Un diplôme de valeur</span></li>
             </ul>
-        </div>
+        </div> -->
 
         <div class="header_content">
             <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br> Eaque minima atque doloribus iure ratione qui.</h4>
@@ -41,7 +41,7 @@
                 <li><a href="composent/article/index.php">Blog</a></li>
                 <li><a href="php/users_list.php">Forum</a></li>
                 <li><a href="#">Contact</a></li>
-                <li><a href="login/login_page.html">Connexion</a></li>
+                <li><a href="composent/users/login/login_page.php">Connexion</a></li>
             </ul>
         </nav>
 
@@ -200,8 +200,8 @@
         </section>
     </div>
     <footer>
-        <p class="copyright">&copy; 2021 - Nature Emoi Par Joel ATTITSO</p>
-        <a href="" class="cgv">Conditions générales de ventes</a>
+        <p class="copyright">&copy; 2022 - MIAGE_GI UNIVERS 10</p>
+        <a href="" class="cgv">Conditions générales</a>
     </footer>
 </body>
 </html>

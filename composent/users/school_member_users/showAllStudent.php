@@ -7,7 +7,7 @@
     
   $dsn = "mysql:host=$host;dbname=$dbname"; 
   // récupérer tous les utilisateurs
-  $sql = "SELECT * FROM users";
+  $sql = "SELECT * FROM students";
    
   try{
     $pdo = new PDO($dsn, $username, $password);
@@ -43,8 +43,10 @@
        <th>Téléphone</th>
        <th>Date de naissance</th>
        <th>Né à</th>
-       <th>Statut</th>
        <th>Genre</th>
+       <th>Niveau</th>
+       <th>Classe</th>
+       <th>Statut</th>
      </tr>
    </thead>
    <tbody>
@@ -59,13 +61,15 @@
           <td><?php echo htmlspecialchars($row['tel']); ?></td>
           <td><?php echo htmlspecialchars($row['birthday']); ?></td>
           <td><?php echo htmlspecialchars($row['birth_at']); ?></td>
-          <td><?php echo htmlspecialchars($row['roles']); ?></td>
+          <td><?php echo htmlspecialchars($row['level']); ?></td>
+          <td><?php echo htmlspecialchars($row['classe']); ?></td>
           <td><?php echo htmlspecialchars($row['gender']); ?></td>
-          <td><a href="update_registration.php?id=<?= $row['id']; ?>" class="btn btn-warning">Modifier la question</a></td>
+          <td><?php echo htmlspecialchars($row['roles']); ?></td>
+          <td><a href="update_student_registration.php?id=<?= $row['id']; ?>" class="btn btn-warning">Modifier</a></td>
           <td><a href="delete_users.php?id=<?= $row['id']; ?>" class="btn btn-warning">Supprimer</a></td>
         </form>
       </tr>
-      <?php endwhile; ?>
+     <?php endwhile; ?>
    </tbody>
  </table>
 </body>
