@@ -36,18 +36,16 @@
 
 
         }else{
-            $errorMsg = "Acune question n'a été trouvée";
+            $errorMsg = "Rien n'a été trouvée";
         }
 
     }else{
-        $errorMsg = "Aucune question n'a été trouvée";
+        $errorMsg = "Rien n'a été trouvée";
     }
 
 
 if(isset($_POST['validate'])){
-    var_dump($_POST);
 
-    echo "Valider est bien passé";
     if(
         !empty($_POST['firstname']) 
         && !empty($_POST['lastname']) 
@@ -60,7 +58,6 @@ if(isset($_POST['validate'])){
         && !empty($_POST['level'])
         && !empty($_POST['class'])
         ){
-        echo "Tout les champs sont bien remplir";
         // Les données de l'utilisateur
         $user_matricule = htmlspecialchars($_POST['matricule']);
         $user_firstname = htmlspecialchars($_POST['firstname']);
@@ -72,18 +69,16 @@ if(isset($_POST['validate'])){
         $user_level = htmlspecialchars($_POST['level']);
         $user_class = htmlspecialchars($_POST['class']);
         $user_gender = htmlspecialchars($_POST['gender']);
-        $user_gender = htmlspecialchars($_POST['roles']);
-        echo "Toute les champs sont bien remplir";
+        $user_roles = htmlspecialchars($_POST['roles']);
 
         //    Verifier si l'utilisateur existe déja sur le site
         $insertUserOnWebsite = $bdd->prepare('UPDATE students SET matricule = ?, firstname = ?, lastname = ?, email = ?, tel = ?, birthday = ?, birth_at = ?, gender = ?, level = ?, classe = ?, roles = ? WHERE id = ?');
         $req = $insertUserOnWebsite->execute(array($user_matricule, $user_firstname, $user_lastname, $user_email, $user_phone, $user_birthday, $user_birth_at, $user_gender, $user_level, $user_class, $user_roles, $idOfStudent));
               
-    
+        header('Location: showAllStudent.php');
     }else{
         echo 'Erreur';
     }
-    if($insertUserOnWebsite){echo "Modification reussir";}
 
 }
 ?>
@@ -95,14 +90,20 @@ if(isset($_POST['validate'])){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Modifier un etudiant</title>
+    <link rel="stylesheet" href="../../../assets/css/form.css">
+    <link rel="stylesheet" href="../../../assets/css/table.css">
+
 </head>
 <body>
-    <div class="main">
+    <div class="main_div">
     <?php 
             if(isset($user_roles)){
             ?>
 
     <form id="name" action ="" method="POST">
+        <div class="form_div">
+
+        
                 <div class="name">
                     <h2 class="name">Nom</h2>
                     <input type="text" class="lastname" name="lastname" value="<?=$user_lastname?>">
@@ -158,7 +159,6 @@ if(isset($_POST['validate'])){
             </div>
             <?php?>
             
-            <h2 class="name">Sexe</h2>
             <div>
                 <h2 class="name">Sexe</h2>
                 <select name="gender" class="option">
@@ -177,7 +177,9 @@ if(isset($_POST['validate'])){
                 </select>
             </div>
             <button type="submit" name="validate">Modifier</button>
-            </form>
+            </div>
+        </form>
+
             <?php }else{echo "Rien à afficher"; }
         ?>
     </div> 

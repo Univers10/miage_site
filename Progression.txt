@@ -4,6 +4,6 @@ Progression de la conception du site
 2 Systeme de connection OK
 3 Lister les utilisateurs OK
 4 Modifier des informations OK
-5 Systeme de paiement en cours...
+5 Systeme de paiement en OK
 6 Creation automatique des classes
 7 Bonus

@@ -42,10 +42,25 @@
             
             if($checkIfUserAlreadyExists->rowCount() == 0){
                 //Isérer l'utilisateurdans la bdd
+                
+                
+                
                 $insertUserOnWebsite = $bdd->prepare("INSERT INTO students(matricule, firstname, lastname, email, tel, birthday, birth_at, level, classe, gender, mdp)  VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
                 $req = $insertUserOnWebsite->execute(array($user_matricule, $user_firstname, $user_lastname, $user_email, $user_phone, $user_birthday, $user_birth_at, $user_level, $user_class, $user_gender, $user_password));
+                
+                
+                //    Insertion dans la table wallet
+                
                 if($req){
-                    echo "Enregistrement éffectué avec sudcces";
+                    $newUserInofs = $bdd->prepare("SELECT * FROM students WHERE matricule = ?");
+                    $newUserInofs->execute(array($user_matricule));
+        
+                    $newUserInofsReq = $newUserInofs->fetch();
+                        
+                    $newUserId = $newUserInofsReq['id'];
+                    $insertpaiementOnWebsite = $bdd->prepare("INSERT INTO wallet(id_student) VALUES(?)");
+                    $req = $insertpaiementOnWebsite->execute(array($newUserId));
+                    header('Location: ../../../composent/users/school_member_users/showAllStudent.php');
                     
                 }else{echo "Enregistrement non effectué";}
     

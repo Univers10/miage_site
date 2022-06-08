@@ -5,11 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Enregistrer un etudiant</title>
+    <link rel="stylesheet" href="../../../assets/css/form.css">
+    <link rel="stylesheet" href="../../../assets/css/table.css">
+
 </head>
 <body>
-    <div class="main">
+    <div class="main_div">
         
         <form id="name" action="../../../actions/users/school_member_users/student_registrationActions.php" method="POST">
+            <div class="form_div">
+
             <div class="name">
                 <h2 class="name">Nom</h2>
                 <input type="text" class="lastname" name="lastname">
@@ -80,8 +85,10 @@
                 </label>
                 <button type="submit" class="btn btn-primary" name="validate">S'inscrire</button>
             </label>
+            </div>
         </form>
     </div> 
+    </div>
 </body>
 </html>
 

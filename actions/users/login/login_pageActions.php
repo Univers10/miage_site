@@ -19,7 +19,7 @@ if(isset($_POST['validate'])){
             $usersInfos = $checkIfUserExists->fetch();
             if($usersInfos){ echo " info user recuperé dans un tableau ";}
             echo $user_password, $usersInfos['mdp'];
-            if(/*password_verify($user_password, $usersInfos['mdp'])*/ $user_password == $usersInfos['mdp']){
+            if(password_verify($user_password, $usersInfos['mdp']) /*$user_password == $usersInfos['mdp']*/){
              
                 //Authentifier l'utilisateur sur le site et récuperer ses informations dans des variables globales SESSIONS
                 $_SESSION["auth"] = true;

@@ -29,8 +29,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Enregistrer un etudiant</title>
+    <link rel="stylesheet" href="../../../assets/css/table_styles.css">
+    <link rel="stylesheet" href="../../../assets/css/tableh1.css">
+
 </head>
 <body>
+  
+<div class="main_div">
+    <div class="table_div">
  <h1>Liste des utilisateurs</h1>
  <table>
    <thead>
@@ -61,11 +67,13 @@
           <td><?php echo htmlspecialchars($row['birth_at']); ?></td>
           <td><?php echo htmlspecialchars($row['roles']); ?></td>
           <td><?php echo htmlspecialchars($row['gender']); ?></td>
-          <td><a href="update_registration.php?id=<?= $row['id']; ?>" class="btn btn-warning">Modifier la question</a></td>
+          <td><a href="update_registration.php?id=<?= $row['id']; ?>" class="btn btn-warning">Modifier</a></td>
           <td><a href="delete_users.php?id=<?= $row['id']; ?>" class="btn btn-warning">Supprimer</a></td>
         </form>
       </tr>
       <?php endwhile; ?>
    </tbody>
  </table>
+ </div>
+ </div>
 </body>

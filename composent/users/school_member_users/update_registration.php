@@ -20,7 +20,6 @@
                 $user_matricule = $usersInfos['matricule'];
                 $user_firstname = $usersInfos['firstname'];
                 $user_lastname = $usersInfos['lastname'];
-                $user_pseudo = $usersInfos['pseudo'];
                 $user_email = $usersInfos['email'];
                 $user_phone = $usersInfos['tel'];
                 $user_birthday = $usersInfos['birthday'];
@@ -49,10 +48,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modifier un utilisateur</title>
+    <title>Modifier un Etudiant</title>
+    <link rel="stylesheet" href="../../../assets/css/form.css">
+    <link rel="stylesheet" href="../../../assets/css/table.css">
+
 </head>
 <body>
-    <div class="main">
+    <div class="main_div">
         <?php 
             include '../../../actions/generators/passwordGeneratorActions.php';
             // require('../../../actions/users/school_member_users/getInfosOfregistrationActions.php'); 
@@ -62,16 +64,13 @@
         ?>
        
             <form id="name" action ="" method="POST">
+                <div class="form_div"> 
                 <div class="name">
                     <h2 class="name">Nom</h2>
                     <input type="text" class="lastname" name="lastname" value="<?=$user_lastname?>">
                     <label class="lastlabel">Nom</label>
                     <input type="text" class="firstname" name="firstname" value="<?=$user_firstname?>">
                     <label class="firstlabel">Prénoms</label>
-                </div>
-                <div class="name">
-                    <h2 class="pseudo">Pseudo</h2>
-                    <input type="text" class="pseudo_input" name="pseudo" value="<?=$user_pseudo?>">
                 </div>
                 <div class="name">
                     <h2 class="matricule">Matricule</h2>
@@ -108,8 +107,6 @@
                 </div>
         
                 
-
-                <h2 class="name">Sexe</h2>
                 <div>
                     <h2 class="name">Sexe</h2>
                     <select name="gender" class="option">
@@ -119,7 +116,8 @@
                     </select>
                 </div>
                 <button type="submit" name="validate">Modifier</button>
-        
+            </div> 
+                
             </form>
         <?php }else{echo "Rien à afficher"; }
         ?>
@@ -132,8 +130,7 @@ if(isset($_POST['validate'])){
 
     echo "Valider est bien passé";
     if(
-        !empty($_POST['pseudo']) 
-        && !empty($_POST['firstname']) 
+        !empty($_POST['firstname']) 
         && !empty($_POST['lastname']) 
         && !empty($_POST['matricule']) 
         && !empty($_POST['birthday'])
@@ -147,7 +144,6 @@ if(isset($_POST['validate'])){
         $user_matricule = htmlspecialchars($_POST['matricule']);
         $user_firstname = htmlspecialchars($_POST['firstname']);
         $user_lastname = htmlspecialchars($_POST['lastname']);
-        $user_pseudo = htmlspecialchars($_POST['pseudo']);
         $user_email = htmlspecialchars($_POST['email']);
         $user_phone = htmlspecialchars($_POST['phone']);
         $user_birthday = htmlspecialchars($_POST['birthday']);
@@ -157,8 +153,8 @@ if(isset($_POST['validate'])){
         echo "Toute les champs sont bien remplir";
 
         //    Verifier si l'utilisateur existe déja sur le site
-        $insertUserOnWebsite = $bdd->prepare('UPDATE users SET matricule = ?, firstname = ?, lastname = ?, pseudo = ?, email = ?, tel = ?, birthday = ?, birth_at = ?, gender = ?, roles = ? WHERE id = ?');
-        $req = $insertUserOnWebsite->execute(array($user_matricule, $user_firstname, $user_lastname, $user_pseudo, $user_email, $user_phone, $user_birthday, $user_birth_at, $user_gender, $user_roles, $idOfUsers));
+        $insertUserOnWebsite = $bdd->prepare('UPDATE users SET matricule = ?, firstname = ?, lastname = ?, email = ?, tel = ?, birthday = ?, birth_at = ?, gender = ?, roles = ? WHERE id = ?');
+        $req = $insertUserOnWebsite->execute(array($user_matricule, $user_firstname, $user_lastname, $user_email, $user_phone, $user_birthday, $user_birth_at, $user_gender, $user_roles, $idOfUsers));
         header('Location: showAllUsers.php');       
     
     }else{

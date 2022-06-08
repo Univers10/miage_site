@@ -1,5 +1,5 @@
 <?php
-    if(!$_SESSION['mdp']){
-        header('Location: connexion.php');
-    }
-?>
+//     if(!$_SESSION['mdp']){
+//         header('Location: connexion.php');
+//     }
+// ?>

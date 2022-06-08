@@ -5,11 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Enregistrer un utilisateur</title>
+    <link rel="stylesheet" href="../../../assets/css/form.css">
+    <link rel="stylesheet" href="../../../assets/css/table.css">
 </head>
 <body>
-    <div class="main">
+    <div class="main_div">
         <?php include '../../../actions/generators/passwordGeneratorActions.php'; ?>
         <form id="name" action="../../../actions/users/school_member_users/registrationActions.php" method="POST">
+            <div class="form_div">
             <div class="name">
                 <h2 class="name">Nom</h2>
                 <input type="text" class="lastname" name="lastname">
@@ -58,16 +61,17 @@
 
             <h2 class="name">Sexe</h2>
             <label class="radio">
-                <input type="radio" class="radio-one" checked="checked" name="gender" value="1">
+                <input type="radio" class="radio-one" checked="checked" name="gender" >
                 <span class="checkmark"></span>
                 Homme
                 <label class="radio">
-                    <input type="radio" class="radio-two" checked="checked" name="gender" value="2">
+                    <input type="radio" class="radio-two" checked="checked" name="gender">
                     <span class="checkmark"></span>
                     Femme
                 </label>
-                <button type="submit" class="btn btn-primary" name="validate">S'inscrire</button>
+                <button type="submit" class="btn btn-primary" name="validate">Valider</button>
             </label>
+            </div>
         </form>
     </div> 
 </body>

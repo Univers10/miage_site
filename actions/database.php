@@ -10,7 +10,7 @@ try{
 
     // Initialisation du temps
     date_default_timezone_set("Africa/Abidjan");  
-    $DateAndTime = date('d/m/Y h:i:s a', time());
+    $DateAndTime = date('d/m/Y H:i:s', time());
 
 }catch(Exception $e){
     die('Une erreur a été trouvée : ' .$e->getMessage());

@@ -43,8 +43,8 @@
                 $insertUserOnWebsite = $bdd->prepare("INSERT INTO users(matricule, firstname, lastname,  email, tel, birthday, birth_at, gender, roles, mdp)  VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
                 $req = $insertUserOnWebsite->execute(array($user_matricule, $user_firstname, $user_lastname, $user_email, $user_phone, $user_birthday, $user_birth_at, $user_gender, $user_roles, $user_password));
                 if($req){
-                    echo "Enregistrement éffectué avec sudcces";
-                    header("Location: ../../composent/users/school_member_users/showAllUsers.php");
+                    echo "Enregistrement éffectué avec succes";
+                    header("Location: ../../../composent/users/school_member_users/showAllUsers.php");
                 }else{echo "Enregistrement non effectué";}
     
     
